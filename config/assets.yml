@@ -1,0 +1,16 @@
+package_assets: on
+gzip_assets: off
+
+javascript_compressor: closure
+compressor_options:
+  compilation_level: "SIMPLE_OPTIMIZATIONS"
+
+javascripts:
+  common:
+    - public/javascripts/jquery.js
+    - public/javascripts/rails.js
+    - public/javascripts/application.js
+
+stylesheets:
+  common:
+    - public/stylesheets/style.css
