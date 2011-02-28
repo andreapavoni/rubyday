@@ -1,7 +1,7 @@
 tweets = new Array();
 
 $.ajax({
-	url: 'http://search.twitter.com/search.json?q=%23rubyday',
+	url: 'http://search.twitter.com/search.json?q=%23rubydayit',
 	type: 'GET',
 	dataType: 'jsonp',
 	complete: function(xhr, textStatus) {
