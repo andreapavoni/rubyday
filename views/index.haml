@@ -19,8 +19,8 @@
           Stiamo lavorando per creare un evento
           %i indimenticabile.
         .subscribe
-          %form{:action => "#", :method => "post"}
-            %input{:type => "email", :placeholder => "Indirizzo email"}/
+          %form{:action => "/subscribe", :method => "post", :id=>"subscriber"}
+            %input{:type => "email", :id=>"email", :name=>"subscriber[email]", :placeholder => "Indirizzo email"}/
             %input{:type => "submit", :value => "submit"}/
           %p
             Lasciaci il tuo indirizzo email così da essere il primo a conoscere tutte le novità del Ruby Day!
