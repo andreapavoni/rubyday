@@ -1,0 +1,19 @@
+!!! 5
+%html
+  %head
+    %meta{:"http-equiv" => "Content-Type", :content => "text/html; charset=UTF-8"}
+    %title Ruby Day
+    %link{:rel => "stylesheet", :href => "stylesheets/screen.css"}/
+    %script{:type => "text/javascript", :src => "http://use.typekit.com/ius1jbd.js"}
+    :javascript
+      try{Typekit.load();}catch(e){}
+  %body
+    %h1{:style=>"color: white; font-size: 2em;"}
+      People interested in receiving further details: #{@guys.count}
+    %table{:border=>"0", :cellpadding=>"0", :cellspacing=>"10", :class=>"list"}
+      %tr
+        %th Email address
+      - @guys.each do |guy|
+        %tr
+          %td{:style=>"color: white;"} #{guy.email}
+  

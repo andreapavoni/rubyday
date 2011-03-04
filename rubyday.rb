@@ -14,6 +14,7 @@ require 'dm-timestamps'
 require 'dm-migrations'
 
 require 'email_veracity'
+require './lib/authorization'
 
 
 configure do
@@ -28,6 +29,10 @@ class Subscriber
   property :created_at,   DateTime
   property :updated_at,   DateTime
     
+end
+
+helpers do
+  include Sinatra::Authorization
 end
 
 configure :development do
@@ -45,6 +50,12 @@ end
 
 get '/thanks' do
   haml :thanks
+end
+
+get '/subscribers' do
+  require_admin
+  @guys = Subscriber.all(:order => [:created_at.desc])
+  haml :list
 end
 
 post '/subscribe' do
