@@ -20,6 +20,7 @@ require './lib/authorization'
 
 configure :development do
   DataMapper::Logger.new(STDOUT, :debug)
+  
   DataMapper.setup(:default, {
     :adapter  => 'mysql',
     :host     => 'localhost',
@@ -29,7 +30,7 @@ configure :development do
 
   
   
-  DataMapper.auto_upgrade!
+  
 end
 
 configure :production do
@@ -41,6 +42,7 @@ configure :production do
     :database => 'sinatra_production'})  
 end
 
+
 class Subscriber
   include DataMapper::Resource
 
@@ -51,6 +53,7 @@ class Subscriber
     
 end
 
+DataMapper.auto_upgrade!
 
 helpers do
   include Sinatra::Authorization
