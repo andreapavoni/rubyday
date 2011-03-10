@@ -7,18 +7,38 @@ require 'sinatra'
 require 'haml'
 require 'sass'
 require 'isolate/now'
-require 'sqlite3'
+require 'mysql'
 
 require 'dm-core'
 require 'dm-timestamps'
 require 'dm-migrations'
+require 'dm-mysql-adapter'
 
 require 'email_veracity'
 require './lib/authorization'
 
 
-configure do
-  DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/db/rubyday.db")
+configure :development do
+  DataMapper::Logger.new(STDOUT, :debug)
+  DataMapper.setup(:default, {
+    :adapter  => 'mysql',
+    :host     => 'localhost',
+    :username => 'root' ,
+    :password => '',
+    :database => 'rubyday'})  
+
+  
+  
+  DataMapper.auto_upgrade!
+end
+
+configure :production do
+  DataMapper.setup(:default, {
+    :adapter  => 'mysql',
+    :host     => 'localhost',
+    :username => 'user' ,
+    :password => 'pass',
+    :database => 'sinatra_production'})  
 end
 
 class Subscriber
@@ -31,14 +51,11 @@ class Subscriber
     
 end
 
+
 helpers do
   include Sinatra::Authorization
 end
 
-configure :development do
-  # Create or upgrade all tables at once, like magic
-  DataMapper.auto_upgrade!
-end
 
 before do
   headers "Content-Type" => "text/html; charset=utf-8"
