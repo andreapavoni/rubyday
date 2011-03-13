@@ -1,55 +1,46 @@
 !!! 5
 %html
-  %head
-    %meta{:"http-equiv" => "Content-Type", :content => "text/html; charset=UTF-8"}
-    %title Ruby Day
-    %link{:rel => "stylesheet", :href => "stylesheets/screen.css"}/
-    %script{:type => "text/javascript", :src => "http://use.typekit.com/ius1jbd.js"}
-    :javascript
-      try{Typekit.load();}catch(e){}
-  %body
-    .card
-      .front.face
-        .logo
-        %p.when Milano – 10 Giugno 2011
-        %a.registration{:href => "http://italianrubyday11.eventbrite.com/"} Registrati!
-        %a.more{:href => "#"} More infos!
-      .back.face
-        %p.event
-          Stiamo lavorando per creare un evento
-          %i indimenticabile.
-        .subscribe
-          %form{:action => "#", :method => "post"}
-            %input{:type => "email", :placeholder => "Indirizzo email"}/
-            %input{:type => "submit", :value => "submit"}/
-          %p
-            Lasciaci il tuo indirizzo email così da essere il primo a conoscere tutte le novità del Ruby Day!
-          %p.no-spam
-            (niente spam, promesso!)
-        .separator
-        .tweets
-          %a.search{:href => "#"} #rubyday
-          .tweet
-            .text
-              %img.avatar{:src => "#", :alt => "user"}/
-              %p
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-            .status
-              @
-              %a.from{:href => "#"}UserName
-              –
-              %a.created{:href => "#"} 10 minutes ago
-          %a.more{:href => "#"} Less infos!
-    %script{:type => "text/javascript", :src => "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"}
-    %script{:type => "text/javascript", :src => "js/rubyday.js"}
-    :javascript
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-3610519-11']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })(); 
-      
+	%head
+		%meta{:charset => "UTF-8"}
+		%title RubyDay
+		%link{:rel => "stylesheet", :href => "stylesheets/screen.css"}/
+		%script{:type => "text/javascript", :src => "https://github.com/headjs/headjs/raw/v0.9/dist/head.min.js" }
+		%script{:type => "text/javascript", :src => "https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"}
+		%script{:type => "text/javascript", :src => "js/rubyday.js"}
+		%script{:type => "text/javascript", :src => "http://use.typekit.com/ius1jbd.js"}
+		:javascript
+			try{Typekit.load();}catch(e){}
+	%body
+		.container
+			%header
+			%section
+				%article
+					%h1 Informazioni generali
+					%p Vogliamo diffondere la conoscenza sull'ecosistema di Ruby in Italia.
+					Rubyday si terrà il 10 giugno 2011 all'università La Bicocca di Milano. Hai delle domande? Scrivici!
+					%a.email{:href => "mailto:info@rubyday.it"}
+						info
+						%span.at<> @
+						rubyday.it
+				%article
+					%h1 Partecipa
+					%p La partecipazione all'evento è vincolata alla registrazione tramite Eventbrite
+					%a.email{:href => "http://italianrubyday11.eventbrite.com/", :target => "_blank"}
+						italianrubyday11.eventbrite.com/
+				%article
+					%h1 Call for paper
+					%p Hai conosciuto una nuova gemma e vuoi spiegarci perché non possiamo farne a meno? Vuoi fare un talk? Proponiti!
+					%a.email{:href => "mailto:cfp@rubyday.it"}
+						cfp
+						%span.at<> @
+						rubyday.it
+				%article
+					%h1 Sponsor
+					%p L'evento è gratuito, organizzato da professionisti per professionisti e parlerà dell'ecosistema Ruby a 360 gradi (non solo Rails ed applicazioni web). Sei interessato a sponsorizzare l'evento? Contattaci!
+					%a.email{:href => "mailto:sponsor@rubyday.it"}
+						sponsor
+						%span.at<> @
+						rubyday.it
+			%aside
+				%h2 #rubyday
+				%ul

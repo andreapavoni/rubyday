@@ -1,72 +1,346 @@
-html, body { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+/* line 4, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
 
-html { font-size: 100.01%; }
+/* line 6, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html {
+  font-size: 100.01%;
+}
 
-div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, abbr, acronym, address, code, del, dfn, em, img, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+/* line 16, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
 
-blockquote, q { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; quotes: "" ""; }
-blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+/* line 18, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  quotes: "" "";
+}
+/* line 45, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
 
-th, td, caption { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; text-align: left; font-weight: normal; vertical-align: middle; }
+/* line 20, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+th, td, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
 
-table { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border-collapse: separate; border-spacing: 0; vertical-align: middle; }
+/* line 22, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
 
-a img { border: none; }
+/* line 24, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+a img {
+  border: none;
+}
 
-html { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 10px solid #880d1e; }
+@import url(blueprint/semantic.css);
+/* line 14, ../src/screen.sass */
+body {
+  background-color: #ebebeb;
+  font-family: "myriad-pro-1", "myriad-pro-2", sans-serif;
+}
 
-body { width: 100%; height: 100%; margin: 0 auto; background: #730000 url("../images/noise.png"); font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", serif; color: #222222; }
+/* line 19, ../src/screen.sass */
+.container {
+  width: 790px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+  font-family: "Helvetica", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
 
-p { margin: 10px 0; }
-p:first-child { margin: 0 0 10px 0; }
+/* line 25, ../src/screen.sass */
+header {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 790px;
+  height: 139px;
+  margin-top: 40px;
+  background: url("../images/logo.png") no-repeat;
+  -webkit-animation: popin 0.3s ease-in;
+}
+/* line 138, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html header {
+  overflow-x: hidden;
+}
 
-a { color: #880d1e; text-decoration: none; }
-a:hover { text-decoration: underline; }
-a:active { position: relative; top: 1px; }
+/* line 33, ../src/screen.sass */
+section {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 510px;
+  margin-top: 80px;
+}
+/* line 138, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html section {
+  overflow-x: hidden;
+}
 
-.card { width: 590px; margin: 0 auto; overflow: hidden; *zoom: 1; height: 340px; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; overflow: visible; -webkit-transition: 0.5s; -webkit-transform-style: preverse 3d; }
-.card.flip .front { -webkit-transform: rotateY(180deg); }
-.card.flip .back { -webkit-transform: rotateY(0deg); z-index: 10; }
-.card .face { display: inline; float: left; margin-right: 0; width: 590px; height: 300px; margin: 0 auto; padding: 20px; position: absolute; background: white; -moz-border-radius: 10px; -webkit-border-radius: 10px; -o-border-radius: 10px; -ms-border-radius: 10px; -khtml-border-radius: 10px; border-radius: 10px; -moz-box-shadow: black 0 0 10px 0; -webkit-box-shadow: black 0 0 10px 0; -o-box-shadow: black 0 0 10px 0; box-shadow: black 0 0 10px 0; -webkit-backface-visibility: hidden; -webkit-transform-style: preserve-3d; -webkit-transition: all 0.4s ease-in-out; }
-* html .card .face { overflow-x: hidden; }
-.card .face:hover { -moz-box-shadow: black 0 0 30px 0; -webkit-box-shadow: black 0 0 30px 0; -o-box-shadow: black 0 0 30px 0; box-shadow: black 0 0 30px 0; }
-.card .face a.more { position: absolute; right: 10px; bottom: 10px; font-size: 12px; }
-.card .face a.more:active { top: auto; bottom: 9px; }
-.card .front { background-color: white; -webkit-transform: rotateY(0deg); z-index: 5; }
-.card .front .logo { display: inline; float: left; margin-right: 0; width: 590px; height: 104px; margin-top: 40px; background: url("../images/ruby.png") no-repeat; }
-* html .card .front .logo { overflow-x: hidden; }
-.card .front p.when { display: inline; float: left; margin-right: 0; width: 590px; padding-top: 10px; font-size: 32px; text-align: center; }
-* html .card .front p.when { overflow-x: hidden; }
-.card .front a.registration { display: inline; float: left; margin-right: 0; width: 590px; padding-top: 10px; font-size: 40px; text-align: center; }
-* html .card .front a.registration { overflow-x: hidden; }
-.card .back { background-color: white; -webkit-transform: rotateY(180deg); z-index: 1; }
-.card .back p.event { display: inline; float: left; margin-right: 0; width: 590px; text-align: center; margin-bottom: 20px; }
-* html .card .back p.event { overflow-x: hidden; }
-.card .back .subscribe { display: inline; float: left; margin-right: 10px; width: 270px; height: 200px; margin: 50px 0; }
-* html .card .back .subscribe { overflow-x: hidden; }
-.card .back .subscribe > p { text-align: justify; }
-.card .back .subscribe form { display: inline; float: left; margin-right: 10px; width: 270px; }
-* html .card .back .subscribe form { overflow-x: hidden; }
-.card .back .subscribe form input { padding: 5px; font-size: 16px; border: 1px solid #730000; }
-.card .back .subscribe form input[type="email"] { display: inline; float: left; margin-right: 10px; width: 178px; color: #222222; -moz-transition-property: all; -webkit-transition-property: all; -o-transition-property: all; transition-property: all; -moz-transition-duration: 0.4s; -webkit-transition-duration: 0.4s; -o-transition-duration: 0.4s; transition-duration: 0.4s; }
-* html .card .back .subscribe form input[type="email"] { overflow-x: hidden; }
-.card .back .subscribe form input[type="email"]:focus { outline: none; -moz-box-shadow: #880d1e 0 0 5px 0; -webkit-box-shadow: #880d1e 0 0 5px 0; -o-box-shadow: #880d1e 0 0 5px 0; box-shadow: #880d1e 0 0 5px 0; }
-.card .back .subscribe form input[type="submit"] { display: inline; float: left; margin-right: 0; width: 70px; position: relative; background: url("../images/button_bg.png") top repeat-x; background-color: #880d1e; color: white; -moz-transition-property: background-color; -webkit-transition-property: background-color; -o-transition-property: background-color; transition-property: background-color; -moz-transition-duration: 0.4s; -webkit-transition-duration: 0.4s; -o-transition-duration: 0.4s; transition-duration: 0.4s; }
-* html .card .back .subscribe form input[type="submit"] { overflow-x: hidden; }
-.card .back .subscribe form input[type="submit"]:hover { background-color: #e3002f; }
-.card .back .subscribe form input[type="submit"]:active { top: 1px; background-color: #730000; }
-.card .back .subscribe form p.no-spam { display: inline; float: left; margin-right: 0; width: 270px; margin-top: -5px; font-size: 12px; }
-* html .card .back .subscribe form p.no-spam { overflow-x: hidden; }
-.card .back .separator { display: inline; float: left; margin-right: 10px; width: 30px; height: 200px; margin: 30px 0 0 0; background: url("../images/black.png") center repeat-y; }
-* html .card .back .separator { overflow-x: hidden; }
-.card .back .tweets { display: inline; float: left; margin-right: 0; width: 270px; height: 200px; margin: 50px 0; }
-* html .card .back .tweets { overflow-x: hidden; }
-.card .back .tweets a.search { font-size: 20px; text-align: center; color: #222222; -moz-transition-property: color; -webkit-transition-property: color; -o-transition-property: color; transition-property: color; -moz-transition-duration: 0.4s; -webkit-transition-duration: 0.4s; -o-transition-duration: 0.4s; transition-duration: 0.4s; }
-.card .back .tweets a.search:hover { color: #880d1e; }
-.card .back .tweets .tweet { margin-top: 10px; display: none; }
-.card .back .tweets .tweet .text { display: inline; float: left; margin-right: 0; width: 270px; }
-* html .card .back .tweets .tweet .text { overflow-x: hidden; }
-.card .back .tweets .tweet .text > img.avatar { float: left; max-width: 40px; max-height: 40px; margin-right: 10px; }
-.card .back .tweets .tweet .text > p { margin: 0; position: relative; top: -5px; }
-.card .back .tweets .tweet .status { display: inline; float: left; margin-right: 10px; width: 390px; font-size: 12px; position: relative; top: -5px; }
-* html .card .back .tweets .tweet .status { overflow-x: hidden; }
+/* line 37, ../src/screen.sass */
+article {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 510px;
+  margin-bottom: 40px;
+}
+/* line 138, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html article {
+  overflow-x: hidden;
+}
+/* line 41, ../src/screen.sass */
+article > h1 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: 600;
+  color: #880d1e;
+  text-shadow: 0 1px 0 #e3002f;
+}
+/* line 48, ../src/screen.sass */
+article > p {
+  color: #242424;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: justify;
+}
+/* line 54, ../src/screen.sass */
+article > p > a {
+  color: #880d1e;
+  text-decoration: none;
+  -moz-transition-property: color;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -moz-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+}
+/* line 58, ../src/screen.sass */
+article > p > a:hover {
+  color: #e3002f;
+}
+/* line 61, ../src/screen.sass */
+article .email {
+  display: block;
+  margin: 40px auto 10px auto;
+  padding: 5px;
+  background: #880d1e;
+  border: 5px solid #730000;
+  color: white;
+  font-size: 26px;
+  font-weight: 300;
+  text-align: center;
+  text-decoration: none;
+  -moz-transition-property: text-shadow;
+  -webkit-transition-property: text-shadow;
+  -o-transition-property: text-shadow;
+  transition-property: text-shadow;
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 74, ../src/screen.sass */
+article .email:hover {
+  text-decoration: none;
+  text-shadow: rgba(255, 255, 255, 0.6) 0 0 5px;
+}
+
+/* line 89, ../src/screen.sass */
+aside {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 230px;
+  margin-left: 30px;
+  margin-top: 80px;
+  background: #ebebeb;
+  border: 5px solid #880d1e;
+  color: white;
+  font-weight: 600;
+  text-align: justify;
+}
+/* line 138, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html aside {
+  overflow-x: hidden;
+}
+/* line 99, ../src/screen.sass */
+aside h2 {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: #e3002f 0 1px 0;
+  color: #880d1e;
+}
+/* line 107, ../src/screen.sass */
+aside ul {
+  margin-top: 10px;
+}
+/* line 110, ../src/screen.sass */
+aside ul li {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 230px;
+  width: 210px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+/* line 138, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html aside ul li {
+  overflow-x: hidden;
+}
+/* line 117, ../src/screen.sass */
+aside ul li img {
+  max-width: 32px;
+  max-height: 32px;
+  float: left;
+  margin-right: 10px;
+}
+/* line 123, ../src/screen.sass */
+aside ul li p {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  color: #242424;
+}
+/* line 129, ../src/screen.sass */
+aside ul li span {
+  font-size: 13px;
+  font-weight: 400;
+  color: #242424;
+}
+
+@-webkit-keyframes popin {
+  /* line 135, ../src/screen.sass */
+  0% {
+    -webkit-transform: translate3d(0, -60px, 0);
+  }
+
+  /* line 137, ../src/screen.sass */
+  67% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* line 139, ../src/screen.sass */
+  86% {
+    -webkit-transform: translate3d(0, -2px, 0);
+  }
+
+  /* line 141, ../src/screen.sass */
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+/* line 144, ../src/screen.sass */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* line 149, ../src/screen.sass */
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display: block;
+  height: 10px;
+}
+
+/* line 155, ../src/screen.sass */
+::-webkit-scrollbar-button:vertical:increment {
+  background-color: transparent;
+}
+
+/* line 159, ../src/screen.sass */
+::-webkit-scrollbar-track-piece {
+  background-color: #cccccc;
+  -webkit-border-radius: 3px;
+}
+
+/* line 164, ../src/screen.sass */
+::-webkit-scrollbar-thumb:vertical {
+  height: 50px;
+  background-color: #880d1e;
+  -webkit-border-radius: 3px;
+}
+
+/* line 170, ../src/screen.sass */
+::-webkit-scrollbar-thumb:horizontal {
+  width: 50px;
+  background-color: #880d1e;
+  -webkit-border-radius: 3px;
+}
+
+/* line 175, ../src/screen.sass */
+html.webkit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ebebeb;
+}
+/* line 182, ../src/screen.sass */
+html.webkit > body {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

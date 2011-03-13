@@ -1,7 +1,7 @@
 tweets = new Array();
 
 $.ajax({
-	url: 'http://search.twitter.com/search.json?q=%23rubydayit',
+	url: 'http://search.twitter.com/search.json?q=%23rubyday',
 	type: 'GET',
 	dataType: 'jsonp',
 	complete: function(xhr, textStatus) {
@@ -15,10 +15,10 @@ $.ajax({
 				"timestamp"	: val.created_at,
 				"id"		: val.id_str
 			};
-			tweets.push(tweet);
-		});
-		$(document).ready(function() {
-			updateTweets(0);
+			img = "<img src='" + val.profile_image_url + "' alt='" + val.from_user + "' />";
+			p = "<p>" + val.text + "</p>";
+			time = "<span>" + normalizeDate(val.created_at) + "</span>";
+			$('aside > ul').append('<li>' + img + p + time + '</li>');
 		});
 	},
 	error: function(xhr, textStatus, errorThrown) {
@@ -26,23 +26,23 @@ $.ajax({
 	}
 });
 
-updateTweets = function(index) {
-	$tweet = $('.tweets > .tweet');
-	$tweet.fadeOut(400, function(){
-		$tweet.find('.text > img').attr({
-		  src: tweets[index].avatar,
-		  alt: tweets[index].from
-		});
-		$tweet.find('.text > p').text(tweets[index].text);
-		$tweet.find('.status > a.from').attr('href', 'http://twitter.com/'+tweets[index].from).text(tweets[index].from);
-		$tweet.find('.status > a.created').attr('href', 'http://twitter.com/'+tweets[index].from+'/status/'+tweets[index].id).text(normalizeDate(tweets[index].timestamp));
-		$tweet.fadeIn(400, function() {
-			setTimeout(function(){
-					updateTweets((index+1)%tweets.length)
-				}, 5000);
-		});
-	});
-}
+// updateTweets = function(index) {
+// 	$tweet = $('.tweets > .tweet');
+// 	$tweet.fadeOut(400, function(){
+// 		$tweet.find('.text > img').attr({
+// 		  src: tweets[index].avatar,
+// 		  alt: tweets[index].from
+// 		});
+// 		$tweet.find('.text > p').text(tweets[index].text);
+// 		$tweet.find('.status > a.from').attr('href', 'http://twitter.com/'+tweets[index].from).text(tweets[index].from);
+// 		$tweet.find('.status > a.created').attr('href', 'http://twitter.com/'+tweets[index].from+'/status/'+tweets[index].id).text(normalizeDate(tweets[index].timestamp));
+// 		$tweet.fadeIn(400, function() {
+// 			setTimeout(function(){
+// 					updateTweets((index+1)%tweets.length)
+// 				}, 5000);
+// 		});
+// 	});
+// }
 
 normalizeDate = function(time) {
 	var values = time.split(" ");
@@ -76,9 +76,3 @@ normalizeDate = function(time) {
 	}
 		return out;
 }
-
-$(document).ready(function() {
-	$('a.more').click(function() {
-		$('.card').toggleClass('flip');
-	});
-});

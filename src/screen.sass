@@ -7,200 +7,183 @@
 // Import all the default blueprint modules so that we can access their mixins.
 @import blueprint
 
-// Import CSS3 awesomeness
+@import blueprint/semantic
+
 @import compass/css3
 
-html
-	position: absolute
-	top: 0
-	right: 0
-	bottom: 0
-	left: 0
-	border: 10px solid $red
-
 body
+	background-color: $light-grey
+	//background-image: url("../images/bg.png")
+	font-family: "myriad-pro-1", "myriad-pro-2", sans-serif
+
+.container
+	+container
+	font-family: "Helvetica", "Helvetica Neue", sans-serif
+	font-size: 16px
+	font-weight: 500
+	
+header
+	+column(20, true)
+	height: 139px
+	margin-top: 40px
+	background: url("../images/logo.png") no-repeat
+	-webkit-animation: popin 0.3s ease-in
+
+
+section
+	+column(13)
+	margin-top: 80px
+	
+article
+	+column(13)
+	margin-bottom: 40px
+	
+	> h1
+		margin-bottom: 20px
+		font-size: 36px
+		font-weight: 600
+		color: $red
+		text-shadow: 0 1px 0 $light-red
+		
+	> p
+		color: $black
+		line-height: 20px
+		font-weight: 400
+		text-align: justify
+		
+		> a
+			color: $red
+			text-decoration: none
+			+transition("color", "0.6s")
+			&:hover
+				color: $light-red
+	
+	.email
+		display: block
+		margin: 40px auto 10px auto
+		padding: 5px
+		background: $red
+		border: 5px solid $dark-red
+		color: #fff
+		font-size: 26px
+		font-weight: 300
+		text-align: center
+		text-decoration: none
+		+transition("text-shadow", "0.3s")
+		
+		&:hover
+			text-decoration: none
+			+text-shadow(rgba(255, 255, 255, 0.6), 0, 0, 5px)
+		
+//		> .at
+//			display: inline-block
+//			margin: 0 3px
+//			font-weight: 300
+//			+transition("all", "0.6s")
+//			+rotate(0)
+//			-webkit-font-smoothing: anti-aliased
+//			
+//		&:hover > .at
+//			-webkit-transform: rotate(360deg)
+		
+aside
+	+column(6, true)
+	margin-left: $blueprint-grid-width
+	margin-top: 80px
+	background: $light-grey
+	border: 5px solid $red
+	color: #fff
+	font-weight: 600
+	text-align: justify
+	
+	h2
+		margin-top: 10px
+		font-size: 24px
+		font-weight: 400
+		text-align: center
+		text-shadow: $light-red 0 1px 0
+		color: $red
+	
+	ul
+		margin-top: 10px
+		
+		li
+			+column(6, true)
+			width: 210px
+			margin-left: 10px
+			margin-bottom: 10px
+			list-style: none
+			
+			img
+				max-width: 32px
+				max-height: 32px
+				float: left
+				margin-right: 10px
+			
+			p
+				font-size: 16px
+				font-weight: 400
+				text-align: left
+				color: $black
+			
+			span
+				font-size: 13px
+				font-weight: 400
+				color: $black
+
+@-webkit-keyframes popin
+	0%
+		-webkit-transform: translate3d(0, -60px, 0)
+	67%
+		-webkit-transform: translate3d(0,   0  , 0)
+	86%
+		-webkit-transform: translate3d(0,  -2px, 0)
+	100%
+		-webkit-transform: translate3d(0,   0  , 0)
+	
+::-webkit-scrollbar
+	width: 6px
+	height: 6px
+
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment
+	display: block
+	height: 10px
+
+
+::-webkit-scrollbar-button:vertical:increment
+	background-color: transparent
+
+
+::-webkit-scrollbar-track-piece
+	background-color: #cccccc
+	-webkit-border-radius: 3px
+
+
+::-webkit-scrollbar-thumb:vertical
+	height: 50px
+	background-color: $red
+	-webkit-border-radius: 3px
+
+
+::-webkit-scrollbar-thumb:horizontal
+	width: 50px
+	background-color: $red
+	-webkit-border-radius: 3px
+	
+html.webkit
+	position: absolute
 	width: 100%
 	height: 100%
-	margin: 0 auto
-	background: $dark-red url('../images/noise.png')
-	font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2",serif
-	color: #222
+	overflow: hidden
+	background: $light-grey
 
-p
-	margin: 10px 0
-	&:first-child
-		margin: 0 0 10px 0
-
-a
-	color: $red
-	text-decoration: none
-	&:hover
-		text-decoration: underline
-	&:active
-		position: relative
-		top: 1px
-
-.card
-	+container
-	height: 340px
-	position: absolute
-	top: 0
-	right: 0
-	bottom: 0
-	left: 0
-	margin: auto
-	overflow: visible
-	-webkit-transition: 0.5s
-	-webkit-transform-style: preverse 3d
-	
-	&.flip .front
-		-webkit-transform: rotateY(180deg)
-	
-	&.flip .back
-		-webkit-transform: rotateY(0deg)
-		z-index: 10
-	
-	.face
-		+column(15, true)
-		height: 300px
-		margin: 0 auto
-		padding: 20px
+	> body
 		position: absolute
-		background: #fff
-		+border-radius(10px)
-		+box-shadow(#000, 0, 0, 10px)
-		-webkit-backface-visibility: hidden
-		-webkit-transform-style: preserve-3d
-		-webkit-transition: all 0.4s ease-in-out
-		&:hover
-			+box-shadow(#000, 0, 0, 30px)
-			
-		a.more
-			position: absolute
-			right: 10px
-			bottom: 10px
-			font-size: 12px
-			&:active
-				top: auto
-				bottom: 9px
-		
-	.front
-		background-color: #fff
-		-webkit-transform: rotateY(0deg)
-		z-index: 5
-	
-		.logo
-			+column(15, true)
-			height: 104px
-			margin-top: 40px
-			background: url('../images/ruby.png') no-repeat
-		
-		p.when
-			+column(15, true)
-			padding-top: 10px
-			font-size: 32px
-			text-align: center
-			
-		a.registration
-			+column(15, true)
-			padding-top: 10px
-			font-size: 40px
-			text-align: center
-			
-	.back
-		background-color: #fff
-		-webkit-transform: rotateY(180deg)
-		z-index: 1
-		
-		p.event
-			+column(15, true)
-			text-align: center
-			margin-bottom: 20px
-		
-		.subscribe
-			+column(7)
-			height: 200px
-			margin: 50px 0
-			
-			> p
-				text-align: justify
-			
-			form
-				+column(7)
-			
-				input
-					padding: 5px
-					font-size: 16px
-					border: 1px solid $dark-red
-				
-				input[type="email"]
-					+column(4.7)
-					color: #222
-					+transition("all", "0.4s")
-				
-					&:focus
-						outline: none
-						+box-shadow($red, 0, 0, 5px)
-				
-				input[type="submit"]
-					+column(2, true)
-					position: relative
-					background: url('../images/button_bg.png') top repeat-x
-					background-color: $red
-					color: #fff
-					+transition("background-color", "0.4s")
-					&:hover
-						background-color: $light-red
-					&:active
-						top: 1px
-						background-color: $dark-red
-						
-				p.no-spam
-					+column(7, true)
-					margin-top: -5px
-					font-size: 12px
-		
-		.separator
-			+column(1)
-			height: 200px
-			margin: 30px 0 0 0
-			background: url('../images/black.png') center repeat-y
-		
-		.tweets
-			+column(7, true)
-			height: 200px
-			margin: 50px 0
-		
-			a.search
-				font-size: 20px
-				text-align: center
-				color: #222
-				+transition("color", "0.4s")
-			
-				&:hover
-					color: $red
-			
-			.tweet
-				margin-top: 10px
-				display: none
-			
-				.text
-					+column(7, true)
-			
-					> img.avatar
-						float: left
-						max-width: 40px
-						max-height: 40px
-						margin-right: 10px
-					
-					> p
-						margin: 0
-						position: relative
-						top: -5px
-						//line-height: 18px
-		
-				.status
-					+column(10)
-					font-size: 12px
-					position: relative
-					top: -5px
+		top: 0
+		right: 5px
+		bottom: 0
+		left: 0
+		overflow-x: hidden
+		overflow-y: scroll
